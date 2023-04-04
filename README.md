@@ -138,29 +138,29 @@ su -
 
 When участники *именуют сценарии*, выполняют команды и анализируют их вывод и поведение
 ----
-- Сценарий "Как ...?"
+- Сценарий "Как узнать используемые версии, информацию о host, размер и количество images?"
 ```shell
 podman version # TODO: собственные пометки участников для будущего использования в проектах
-podman system info
-podman system df
+podman system info #Конфиги, пути
+podman system df #Размеры образов и контейнеров
 ```
 
-- Сценарий "Как ...?"
+- Сценарий "Как войти выйти из registry-host? Аутентификация на конкретном хранилище образов"
 ```shell
-podman logout
+podman logout 
 podman login {{ registry-host }}
 ```
 
 - Сценарий "Как найти нужный образ в registry?"
 Залогиниться браузером по адресу {{ registry-host }}, в поиске найти нужный образ и скопировать полное символьное имя (включая сетевой адрес хоста).
 
-- Сценарий "Как ...?"
+- Сценарий "Как скопировать образ на хост из registry-host и проверить его размер?"
 ```shell
 podman image pull {{ registry-host }}/{{ os-images-path }}/alpine:3.14
 podman system df
 ````
 
-- Сценарий "Как ...?"
+- Сценарий "Как запустить имеющйся контейнер и присвоить ему имя?"
 ```shell
 podman container run hello
 
@@ -169,7 +169,7 @@ podman container run --name demo -it {{ registry-host }}/{{ os-images-path }}/al
 /# exit 
 ```
 
-- Сценарий "Как ...?"
+- Сценарий "Как проверить какие имеются контейнеры, удаить контейнер по имени?"
 ```shell
 podman container ls [--all]
 podman container rm demo
